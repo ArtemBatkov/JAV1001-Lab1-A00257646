@@ -145,7 +145,7 @@ fun CheckSyntax():Boolean{
     var IsDigit = false; // Input value is digit not String
     var InMetricsOK = false; // Does InMetrics exist?
     var NewMetricsOK = false;// Does NewMetrics exist?
-    var IsPossibleConvert = false; // can you convert from kg to g? NO!!!!
+    var IsPossibleConvert = false; // can you convert from km to g? NO!!!!
 
     println("\t\tERRORS LIST:")
     try{
