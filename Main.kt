@@ -7,19 +7,22 @@ Discipline: JAV1001 App Development for Android
 
 import kotlin.system.exitProcess
 
-private var Path : String = "km mi cm in";
-private  var Weight : String = "kg lb g oz";
-private  var Temperature : String = "C F K";
-private var Volume : String = "L cup";
+private val Path : String = "km mi cm in";
+private  val Weight : String = "kg lb g oz";
+private  val Temperature : String = "C F K";
+private val Volume : String = "L cup";
 private var InputType :String = "";
 private  var NewType : String = "";
-private  var AllMetrics = Path + Weight + Temperature + Volume;
+private  val AllMetrics = Path + Weight + Temperature + Volume;
 
+private var StrVal = "0";
 private var InputValue : Double = 0.0;
 private var InputMetrics : String = "None";
 private var NewMetrics = "None";
-private var StrVal = "0";
+
 private  var Result : Double = 0.0
+
+
 fun main(args: Array<String>) {
     var Menu   = MenuNextStep(); // Main Menu of the program
     while (true){
@@ -33,9 +36,9 @@ fun main(args: Array<String>) {
             1 -> {//do conversion
                 print("Type the value and metrics: ")
                 try{//try needs if user type one word and press enter -- exception will occurred
-                    var (a, b) = readln()!!.split(' ') // a,b are temp variables that is a - Value(str), and b - Metric(str)
-                    StrVal = a
-                    InputMetrics = b
+                    var (num, metric) = readln()!!.split(' ') // a,b are temp variables that is a - Value(str), and b - Metric(str)
+                    StrVal = num
+                    InputMetrics = metric
                 }
                 catch (exception: Exception){
                     continue;
@@ -145,7 +148,7 @@ fun CheckSyntax():Boolean{
     var IsDigit = false; // Input value is digit not String
     var InMetricsOK = false; // Does InMetrics exist?
     var NewMetricsOK = false;// Does NewMetrics exist?
-    var IsPossibleConvert = false; // can you convert from km to g? NO!!!!
+    var IsPossibleConvert = false; // can you convert from kg to g? NO!!!!
 
     println("\t\tERRORS LIST:")
     try{
